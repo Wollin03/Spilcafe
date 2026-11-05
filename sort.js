@@ -1,5 +1,5 @@
 
-// slider//
+// slider til spilletid//
 const spilletidSlider = document.querySelector("#spilletid");
 const spilletidValue = document.querySelector("#spilletid-value");
 
