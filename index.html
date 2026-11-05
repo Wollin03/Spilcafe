@@ -9,12 +9,28 @@
 <body>
     <h1>Hyggebrættet</h1>
 
+<label for="spilletid">Maksimal spilletid:</label>
+<input type="range" id="spilletid" min="10" max="90" value="90"></input>
+<!--Input type range = laver selve slideren-->
+<!--min="10" betyder at slideren starter på 10 minutter og max="90" betyder at slideren slutter på 90 minutter-->
+
+
+<Span id ="spilletidVisning">90 minutter</span>
+
+<!--Dropdown til sortering af spil-->
+<label for="sortering">Sorter efter:</label>
+<select id="sortering">
+    <option value="titel">Titel A-Å</option>
+    <option value="spilletid">Korteste spilletid</option>
+    <option value="spillere">Antal spillere</option>
+    </select>
+<!--select laver dropdown menuen og option laver de forskellige valgmuligheder-->
+
 <div class="sog">
     <input type="text" id="sog-felt" placeholder="Søg efter spil...">
     <button id="sog-knap">Søg</button>
 </div>
 <div id="spil-liste"></div>
-
 
 <script src="games.js"></script>
 <script src="script.js"></script>
