@@ -114,3 +114,31 @@ body{
     border-radius:12px;
 }
 
+
+#spil-liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.spil-kort {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: white;
+}
+
+.spil-kort img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.spil-kort h2 {
+    margin-bottom: 10px;
+}
+
+.spil-kort p {
+    line-height: 1.5;
+}
