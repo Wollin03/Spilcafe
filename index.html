@@ -1,23 +1,136 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Spilcafe</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <h1>Hyggebrættet</h1>
 
-<div class="sog">
-    <input type="text" id="sog-felt" placeholder="Søg efter spil...">
-    <button id="sog-knap">Søg</button>
+    <div class="sog">
+        <label for="sog-felt">Søg efter spil</label>
+        <input type="text" id="sog-felt" placeholder="Søg efter spil...">
+        <button id="sog-knap">Søg</button>
+    </div>
+
+    <!-- Kategorier -->
+    <fieldset id="kategori-filter">
+        <legend>Vælg kategorier</legend>
+
+        <label>
+            <input type="checkbox" name="kategori" value="Mord mysterie">
+            Mord mysterie
+        </label>
+
+        <label>
+            <input type="checkbox" name="kategori" value="Selskab">
+            Selskab
+        </label>
+
+        <label>
+            <input type="checkbox" name="kategori" value="Brug kroppen">
+            Brug kroppen
+        </label>
+
+        <label>
+            <input type="checkbox" name="kategori" value="Kortspil">
+            Kortspil
+        </label>
+
+        <label>
+            <input type="checkbox" name="kategori" value="Gammeldags">
+            Gammeldags
+        </label>
+
+        <label>
+            <input type="checkbox" name="kategori" value="Brain twister">
+            Brain twister
+        </label>
+    </fieldset>
+
+    <!-- Sværhedsgrad -->
+    <fieldset id="svaerhedsgrad-filter">
+        <legend>Vælg sværhedsgrad</legend>
+
+        <label>
+            <input type="radio" name="rating" value="" checked>
+            Alle
+        </label>
+
+        <label>
+            <input type="radio" name="rating" value="Let">
+            Let
+        </label>
+
+        <label>
+            <input type="radio" name="rating" value="Mellem">
+            Mellem
+        </label>
+
+        <label>
+            <input type="radio" name="rating" value="Svær">
+            Svær
+        </label>
+    </fieldset>
+     <!-- Tid -->
+    <div class="filter-group">
+        <p class="filter-label">Tid</p>
+        <div class="Tid">
+        <label class="tid">
+        <input type="checkbox" name="tid" value="10"> 10
+            </label>
+        <label class="tid">
+           <input type="checkbox" name="tid" value="20"> 20
+           </label>
+            <label class="tid">
+         <input type="checkbox" name="tid" value="30"> 30
+        </label>
+        <label class="tid">
+        <input type="checkbox" name="tid" value="45"> 45
+        </label>
+        <label class="tid">
+         <input type="checkbox" name="tid" value="60"> 60
+        </label>
+          </div>
+        </div>
+
+        <!-- Antal spillere -->
+<div class="filter-group">
+    <p class="filter-label">Antal spillere</p>
+
+    <div class="spillere-range">
+        <input
+            type="number"
+            id="min-spillere"
+            min="1"
+            step="1"
+            placeholder="Min. spillere"
+            aria-label="Mindste antal spillere"
+        >
+
+        <span>-</span>
+
+        <input
+            type="number"
+            id="max-spillere"
+            min="1"
+            step="1"
+            placeholder="Maks. spillere"
+            aria-label="Største antal spillere"
+        >
+    </div>
 </div>
-<div id="spil-liste"></div>
+        <div class="filter-footer">
+                    <button id="apply-filters" class="apply-button">Vis spil</button>
+                </div>
+                
+    <div id="spil-liste"></div>
 
-
-<script src="games.js"></script>
-<script src="script.js"></script>
-
+    <script src="games.js"></script>
+    <script src="script.js"></script>
+    <script src="filter.js"></script>
 </body>
 </html>
