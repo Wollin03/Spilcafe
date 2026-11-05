@@ -1,3 +1,15 @@
+:root{
+    --beige:#fff6e9;
+    --morkeblaa:#1e2a3a;
+    --lysblaa:#50b0bc;
+    --orange:#ffc845;
+    --roed:#ff6f61;
+    --groen:#11c043;
+    --blaa:#3970ba;
+    --hvid:#fff;
+}
+
+
 body{
     background-color: #fff6e9;
     color:#1e2a3a;
@@ -23,3 +35,42 @@ body{
     height:150px;
     object-fit:contain;
 }
+
+.tag{
+    display:inline-block;
+    background-color:#ffc845;
+    padding:4px 10px;
+    border-radius:99px;
+    font-size:12px;
+}
+
+.kort[data-category="Brug kroppen"] img{
+    background-color:#ffc845;
+    border-radius:12px;
+}
+
+.kort[data-category="Mord mysterie"] img{
+    background-color:#ff6f61;
+    border-radius:12px;
+}
+
+.kort[data-category="Selskab"] img{
+    background-color:#50b0bc;
+    border-radius:12px;
+}
+
+.kort[data-category="Kortspil"] img{
+    background-color:#1e2a3a;
+    border-radius:12px;
+}
+
+.kort[data-category="Gammeldags"] img{
+    background-color:#11c043;
+    border-radius:12px;
+}
+
+.kort[data-category="Brain twister"] img{
+    background-color:#3970ba;
+    border-radius:12px;
+}
+
