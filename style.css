@@ -51,6 +51,38 @@ body{
     background-position:0 0, 30px 30px;
 }
 
+/* CSS til filter menu */
+.filterMenu{
+    position: relative;
+    display: inline-block; 
+}
+
+.filterMenu summary{
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: hsl(210, 23%, 95%);
+    color: #000000;
+    border-radius: 5px;
+}
+
+.filterIndhold{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    right: auto;
+    background-color: white;
+    padding: 20px;
+    width: 220px;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
 .tag{
     display:inline-block;
     background-color:#ffc845;
@@ -89,3 +121,31 @@ body{
     border-radius:12px;
 }
 
+
+#spil-liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.spil-kort {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px;
+    background-color: white;
+}
+
+.spil-kort img {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.spil-kort h2 {
+    margin-bottom: 10px;
+}
+
+.spil-kort p {
+    line-height: 1.5;
+}
