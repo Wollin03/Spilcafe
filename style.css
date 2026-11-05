@@ -23,3 +23,34 @@ body{
     height:150px;
     object-fit:contain;
 }
+
+/* CSS til filter menu */
+.filterMenu{
+    position: relative;
+    display: inline-block; 
+}
+
+.filterMenu summary{
+    cursor: pointer;
+    padding: 10px 15px;
+    background-color: hsl(210, 23%, 95%);
+    color: #000000;
+    border-radius: 5px;
+}
+
+.filterIndhold{
+    position: absolute;
+    left: 0;
+    top: 100%;
+    right: auto;
+    background-color: white;
+    padding: 20px;
+    width: 220px;
+    border: 1px solid black;
+    border-radius: 5px;
+    z-index: 10;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
