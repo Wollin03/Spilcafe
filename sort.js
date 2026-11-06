@@ -8,11 +8,6 @@ spilletidSlider.addEventListener("input", function() {
   const valgtTid = Number(spilletidSlider.value);
   spilletidValue.textContent = valgtTid + "min";
 
-  const filtreredeSpil = games.filter(function(game) {
-    return game.maxTime <= valgtTid;
-  })
-
-  console.log(filtreredeSpil);
 });
 
 
