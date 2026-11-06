@@ -1,3 +1,8 @@
+//giver slideren funktion//
+const spilletidSlider = document.querySelector("#spilletid");
+const spilletidValue = document.querySelector("#spilletid-value");
+
+
 // Find elementerne i HTML.
 const kategoriCheckbokse = document.querySelectorAll(
     '#kategori-filter input[name="kategori"]'
@@ -57,6 +62,8 @@ function filtrerSpil() {
 
     // Filtrer grundmængden: alle spil.
     const filtreredeSpil = games.filter(game => {
+        //henter den valgte spilletid fra slideren//
+        const valgtTid = Number(spilletidSlider.value);
         // Ingen kategorier valgt = alle kategorier.
         const passerKategori =
             valgteKategorier.length === 0 ||
@@ -90,7 +97,8 @@ function filtrerSpil() {
                passerNiveau &&
                passerTid &&
                passerMin &&
-               passerMax;
+               passerMax &&
+               game.maxTime <= valgtTid;
     });
 
     // Vis resultatet med funktionen fra script.js.
@@ -124,5 +132,11 @@ maxSpillereFelt.addEventListener("input", filtrerSpil);
 // Anvend også filtrene med knappen "Vis spil".
 visSpilKnap.addEventListener("click", filtrerSpil);
 
+//opdaterer spilletiden når slideren flyttes//
+spilletidSlider.addEventListener("input", function() {
+    const valgtTid = Number(spilletidSlider.value);
+    spilletidValue.textContent = valgtTid + "min";
+    filtrerSpil();
+});
 // Første visning.
 filtrerSpil();

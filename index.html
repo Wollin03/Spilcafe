@@ -17,6 +17,10 @@
     </div>
 
     <!-- Kategorier -->
+     <details class="filterMenu">
+        <summary>Filtrer spil</summary>
+        <div class="filterIndhold">
+
     <fieldset id="kategori-filter">
         <legend>Vælg kategorier</legend>
 
@@ -75,27 +79,17 @@
             Svær
         </label>
     </fieldset>
+
      <!-- Tid -->
-    <div class="filter-group">
-        <p class="filter-label">Tid</p>
-        <div class="Tid">
-        <label class="tid">
-        <input type="checkbox" name="tid" value="10"> 10
-            </label>
-        <label class="tid">
-           <input type="checkbox" name="tid" value="20"> 20
-           </label>
-            <label class="tid">
-         <input type="checkbox" name="tid" value="30"> 30
-        </label>
-        <label class="tid">
-        <input type="checkbox" name="tid" value="45"> 45
-        </label>
-        <label class="tid">
-         <input type="checkbox" name="tid" value="60"> 60
-        </label>
-          </div>
-        </div>
+      <!-- Silje laver slider til tid i dropdown menu-->
+      <div class="filter-group">
+    <label for="spilletid">Spillets varighed</label>
+    <input type="range" id="spilletid" min="10" max="90" value="90">
+    <!-- Input type range = laver selve slideren -->
+     <span id="spilletid-value">90 minutter</span> 
+
+       
+</div>
 
         <!-- Antal spillere -->
 <div class="filter-group">
@@ -127,40 +121,10 @@
                     <button id="apply-filters" class="apply-button">Vis spil</button>
                 </div>
                 
+        </div>
+     </details>
     <div id="spil-liste"></div>
-    <details class="filterMenu">
-    <!--Details laver en dropdown menu-->
-
-<summary>Filtrer spil</summary>
-
-<div class="filterIndhold">
-<label for="spilletid">Spilletid:</label>
-<input type="range" id="spilletid" min="10" max="90" value="90"></input>
-<!--Input type range = laver selve slideren-->
-<!--min="10" betyder at slideren starter på 10 minutter og max="90" betyder at slideren slutter på 90 minutter-->
-
-
-<Span id ="spilletidVisning">10-90 minutter</span>
-
-<!--Dropdown til sortering af spil-->
-<label for="sortering">Sorter efter:</label>
-<select id="sortering">
-    <option value="titel">Titel A-Å</option>
-    <option value="spilletid">Korteste spilletid</option>
-    <option value="spillere">Antal spillere</option>
-    </select>
-<!--select laver dropdown menuen og option laver de forskellige valgmuligheder-->
-</div>
-</details>
-
-<div class="sog">
-    <input type="text" id="sog-felt" placeholder="Søg efter spil...">
-    <button id="sog-knap">Søg</button>
-</section>
-
-<section id="spil-liste" class="spil-liste">
-</section>
-
+    
 </main>
 
     <script src="games.js"></script>
