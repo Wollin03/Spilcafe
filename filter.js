@@ -22,6 +22,7 @@ const visSpilKnap = document.getElementById("apply-filters");
 
 function filtrerSpil() {
     // Find de valgte kategorier.
+const sogeord =document.getElementById("sog-felt").value.toLowerCase().trim();
     const valgteKategorier = Array.from(kategoriCheckbokse)
         .filter(checkboks => checkboks.checked)
         .map(checkboks => checkboks.value);
@@ -69,6 +70,10 @@ function filtrerSpil() {
             valgteKategorier.length === 0 ||
             valgteKategorier.includes(game.category);
 
+    const passerSogning=
+    game.title.toLowerCase().includes(sogeord)||
+    game.category.toLowerCase().includes(sogeord);
+
         // Alle valgt = ingen begrænsning på sværhedsgrad.
         const passerNiveau =
             valgtNiveau === "" ||
@@ -94,14 +99,23 @@ function filtrerSpil() {
 
         // Alle filtergrupper skal passe samtidig.
         return passerKategori &&
+                passerSogning &&
                passerNiveau &&
                passerTid &&
                passerMin &&
                passerMax &&
-               game.maxTime <= valgtTid;
+               game.maxTime<=valgtTid;
     });
 
     // Vis resultatet med funktionen fra script.js.
+    const valgtSortering = document.getElementById("sortering").value;
+
+    if(valgtSortering === "titel") {
+        filtreredeSpil.sort((a,b)=>a.title.localeCompare(b.title));
+    } else if(valgtSortering==="spilletid") {
+        filtreredeSpil.sort((a,b)=>a.maxTime-b.maxTime);
+    }
+
     visSpil(filtreredeSpil);
 
     if (filtreredeSpil.length === 0) {
@@ -130,13 +144,37 @@ minSpillereFelt.addEventListener("input", filtrerSpil);
 maxSpillereFelt.addEventListener("input", filtrerSpil);
 
 // Anvend også filtrene med knappen "Vis spil".
-visSpilKnap.addEventListener("click", filtrerSpil);
+visSpilKnap.addEventListener("click",()=>{
+    kategoriCheckbokse.forEach(boks => boks.checked =false);
+    document.querySelector('input[name="rating"][value=""]').checked=true;
+    spilletidSlider.value=90;
+    spilletidValue.textContent="90 min";
+    minSpillereFelt.value="";
+    maxSpillereFelt.value="";
+    filtrerSpil();
+});
 
 //opdaterer spilletiden når slideren flyttes//
 spilletidSlider.addEventListener("input", function() {
     const valgtTid = Number(spilletidSlider.value);
-    spilletidValue.textContent = valgtTid + "min";
+    spilletidValue.textContent = valgtTid + " min";
     filtrerSpil();
 });
 // Første visning.
 filtrerSpil();
+
+const filterMenu = document.querySelector(".filterMenu");
+
+function lukFilter() {
+  filterMenu.classList.add("lukker");
+  filterMenu.addEventListener("animationend", () => {
+    filterMenu.open = false;
+    filterMenu.classList.remove("lukker");
+  }, { once: true });
+}
+
+document.addEventListener("click", (event) => {
+  if (filterMenu.open && !filterMenu.contains(event.target)) {
+    lukFilter();
+  }
+});

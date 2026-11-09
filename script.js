@@ -6,20 +6,30 @@ function visSpil(liste) {
   spilListe.innerHTML = "";
 
   kategorier.forEach(kategori => {
-    let kort = "";                                   // ← ÆNDRING 1: ny linje
+    let kort = ""; 
 
     liste.filter(game => game.category === kategori).forEach(game => {
-      kort += ` 
+      let spillere =`${game.minPlayers} - ${game.maxPlayers}`;
+      if (game.minPlayers===game.maxPlayers){
+        spillere=`${game.minPlayers}`;
+      }
+      let tid =`${game.minTime} - ${game.maxTime}`;
+      if (game.minTime===game.maxTime) {
+        let=`${game.minTime}`;
+      }
+
+        kort += ` 
         <article class="kort" data-category="${game.category}">
           <img src="${game.image}" alt="${game.title}">
           <h3>${game.title}</h3>
           <p class="tag">${game.category}</p>
-          <p>${game.minTime} - ${game.maxTime} min</p>
-          <p>${game.minPlayers} - ${game.maxPlayers} spillere</p>
+          <p>${tid} min</p>
+          <p>${spillere} spillere</p>
         </article>
       `;
     });
 
+    if (kort=== "") {return;}
     spilListe.innerHTML += ` 
       <h2>${kategori}</h2>
       <div class="raekke">${kort}</div>

@@ -11,7 +11,7 @@ const games = [
   { id: 7, title: "Ludo", category: "Selskab", minTime: 30, maxTime: 60, minPlayers: 2, maxPlayers: 4, difficulty: "Mellem", description: "Slå med terningen, flyt dine brikker rundt på spillepladen, og bliv den første til at få alle brikker i mål.", image: "images/ludo-forside.png" },
 
   // Brug kroppen
-  { id: 8, title: "Twister", category: "Brug kroppen", minTime: 10, maxTime: 20, minPlayers: 2, maxPlayers: 10, difficulty: "Let", description: "Sæt hænder og fødder på de rigtige farver, og hold balancen længst muligt!", image: "images/twister-forside.png" },
+  { id: 8, title: "Twister", category: "Brug kroppen", minTime: 10, maxTime: 20, minPlayers: 2, maxPlayers: 10, difficulty: "Let", description: "Sæt hænder og fødder på de rigtige farver, og hold balancen længst muligt!", image: "images/twisterrigtig.png" },
   { id: 9, title: "Grab the mic", category: "Brug kroppen", minTime: 20, maxTime: 30, minPlayers: 2, maxPlayers: 10, difficulty: "Let", description: "Træk et kort med et ord, og vær hurtigst til at gribe mikrofonen og synge en sang, der indeholder ordet.", image: "images/gtm-forside.png" },
   { id: 10, title: "Hint", category: "Brug kroppen", minTime: 45, maxTime: 60, minPlayers: 4, maxPlayers: 10, difficulty: "Mellem", description: "Forklar, tegn, mim eller nyn, mens dit hold forsøger at gætte de rigtige svar.", image: "images/hint-forside.png" },
   { id: 11, title: "Tegn og gæt", category: "Brug kroppen", minTime: 30, maxTime: 60, minPlayers: 3, maxPlayers: 10, difficulty: "Let", description: "Tegn ord og begreber, mens de andre spillere forsøger at gætte, hvad du tegner. Et sjovt og kreativt spil for hele familien.", image: "images/tog-forside.png" },
